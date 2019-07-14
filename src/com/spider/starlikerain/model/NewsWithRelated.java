@@ -14,7 +14,7 @@ public class NewsWithRelated extends UrlNews {
         this.relateds.put(title, url);
     }
 
-    public HashMap getRelateds() {
+    public HashMap<String, String> getRelateds() {
         return this.relateds;
     }
 
