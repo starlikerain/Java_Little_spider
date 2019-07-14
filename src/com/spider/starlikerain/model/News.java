@@ -9,12 +9,10 @@ public class News implements Viewable {
         this.content = content;
     }
 
-    // TODO 这里我写了 this.
     public String getTitle() {
         return this.title;
     }
 
-    // TODO 这里我写了 this.
     public String getContent() {
         return this.content;
     }
