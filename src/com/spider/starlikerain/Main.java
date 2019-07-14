@@ -26,16 +26,22 @@ public class Main {
         int count = 0; // 弄一个什么计数器
         Set<String> visitedUrl = new HashSet<>(); // 弄一个 hashMap 记录需要访问过的 url
         visitedUrl.add(startUrl);
-
         newsQueue.add(startNews);
 
 
         startUrl = "https://readhub.cn/topic/5bMmlAm75lD";
         startNews = UrlNewsReader.read(startUrl); // 获得了一个 hashMap<title, url>
-
         visitedUrl.add(startUrl);
-
         newsQueue.add(startNews);
+
+        String baseUrl = "https://readhub.cn/topic/";
+        for (int i = 0; i <= maximumURL; i++) {
+            String randomUrl = baseUrl + RandomString.RandomString(11);
+            startNews = UrlNewsReader.read(randomUrl); // 获得了一个 hashMap<title, url>
+            if (startNews.title.equals("Readhub")) continue; //
+            visitedUrl.add(randomUrl);
+            newsQueue.add(startNews);
+        }
 
 
         ArrayList<Viewable> results = new ArrayList<>(); // Viewable 只是一个 interface 有 display

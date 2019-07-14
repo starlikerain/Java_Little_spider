@@ -8,11 +8,12 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 public class UrlNewsReader {
+    public static String content;
     public static NewsWithRelated read(String url) throws IOException {
         Document doc = Jsoup.connect(url).get();
         Elements titleElements = doc.select("title");
         String title = titleElements.first().text();
-        String content = doc.select("meta[name=description]").attr("content");
+        content = doc.select("meta[name=description]").attr("content");
 
         NewsWithRelated news = new NewsWithRelated(url, title, content);
 

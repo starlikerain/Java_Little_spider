@@ -1,8 +1,8 @@
 package com.spider.starlikerain.model;
 
 public class News implements Viewable {
-    private String title;
-    private String content;
+    public String title;
+    public String content;
 
     public News(String title, String content) {
         this.title = title;
